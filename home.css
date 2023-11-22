@@ -1,0 +1,505 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #172554;
+    color: #fff;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+header h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+header h1 i{
+    font-size: 25px;
+    color: #3b82f6;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+}
+
+nav ul .btn{
+    width: 110px;
+    height: 40px;
+    background: linear-gradient(130deg ,  #172554 , #3b82f6);
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 17px;
+    display: none;
+}
+
+nav ul a{
+    text-decoration: none;
+    margin: 0 30px;
+    color: #fff;
+    font-size: 18px;
+}
+
+nav ul a li{
+    list-style: none;
+}
+
+nav ul a li:hover{
+    color: #3b82f6;
+}
+
+header .btn{
+    width: 110px;
+    height: 40px;
+    background: linear-gradient(130deg ,  #172554 , #3b82f6);
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 17px;
+}
+
+header .btn:hover{
+    background: #3b82f6;
+}
+
+#hamburger{
+    display: none;
+}
+
+.login-form{
+    width: 400px;
+    height: 420px;
+    background: #3b82f6;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    position: absolute;
+    top: -1000px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50% , -50%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.login-form h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.login-form input{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    outline: none;
+    margin: 10px 0;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.login-form button{
+    width: 110px;
+    height: 40px;
+    background: #263a7e;
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    margin: 20px 0;
+}
+
+.login-form button:hover{
+    background: #172554;
+}
+
+#cross{
+    font-size: 19px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#cross:hover{
+    color: #172554;
+}
+
+/* ----------- Home ----------- */
+
+#home{
+    width: 100%;
+    padding: 30px;
+}
+
+#home h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0 40px 0;
+}
+
+.songs-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(330px , 1fr));
+    grid-gap: 20px;
+}
+
+.songs-container .song{
+    background: #3b82f6;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.songs-container .song b{
+    color: #1033a7;
+}
+
+.songs-container .song a{
+    text-decoration: none;
+    color: transparent;
+    position: relative;
+    bottom: 170px;
+    left: 43%;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.songs-container .song a:hover{
+    opacity: 1;
+}
+
+.songs-container .song a button{
+    width: 60px;
+    height: 60px;
+    background: rgb(98, 98, 98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid rgb(98, 98, 98);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.songs-container .song a button i{
+    font-size: 19px;
+}
+
+.songs-container .song img{
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.songs-container .song h3{
+    font-size: 22px;
+    font-weight: bolder;
+    margin: 0 0 20px 0;
+    color: #1033a7;
+}
+
+.songs-container .song p{
+    font-size: 15px;
+    line-height: 1.2rem;
+    margin: 20px 0 30px 0;
+}
+
+
+/* ----------- Footer ----------- */
+
+footer{
+    width: 100%;
+    padding: 20px 30px;
+    background: #1033a7;
+    margin: 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer div{
+    display: flex;
+    align-items: center;
+}
+
+footer div h1{
+    font-size: 28px;
+    margin-right: 15px;
+}
+
+footer div p{
+    font-size: 16px;
+    font-weight: light;
+}
+
+footer .social-links{
+    display: flex;
+    align-items: center;
+}
+
+footer .social-links .social-btn{
+    width: 50px;
+    height: 50px;
+    background: #5e90e0;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+footer .social-links .social-btn:hover{
+    color: #263a7e;
+}
+
+
+/* ----------- Hamburger ----------- */
+
+.nav-top{
+    top: 200px !important;
+}
+
+.form-top{
+    top: 320px !important;
+}
+
+.form-top-sm{
+    top: 220px;
+}
+
+
+
+/* ------------------- Song-Player ----------------- */
+
+
+#song-player{
+    width: 100%;
+    padding: 30px 60px;
+    margin: 0px auto;
+}
+
+#song-player .image{
+    width: 100%;
+    height: 600px;
+    background: url(/Images/wallpaper2you_217917.jpg) no-repeat center/cover;
+    border-radius: 20px;
+}
+
+#song-player .image audio{
+    width: 92%;
+    height: 60px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.image .player{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 530px;
+}
+
+.image .player input{
+    -webkit-appearance: none;
+    width: 98%;
+    height: 10px;
+    background: #3b82f6;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 15px;
+}
+
+.image .player input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: #172554;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 5px rgba(255, 26, 26,0.22);
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls div{
+    width: 45px;
+    height: 45px;
+    margin: 20px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #1033a7;
+    box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+    cursor: pointer;
+}
+
+.controls div:nth-child(2){
+    transform: scale(1.5);
+    background: #1033a7;
+    color: #fff;
+}
+
+.control-buttons div{
+    display: flex;
+}
+
+#volume{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 33%;
+}
+
+#cell-1{
+    width: 7px;
+    height: 10px;
+    background: #1033a7;
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+#cell-2{
+    width: 7px;
+    height: 15px;
+    background: #1033a7;
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+#cell-3{
+    width: 7px;
+    height: 20px;
+    background: #1033a7;
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+#cell-4{
+    width: 7px;
+    height: 25px;
+    background: #1033a7;
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+
+
+/* ----------- Responsiveness ----------- */
+
+
+@media screen and (max-width: 900px){
+    #home{
+        padding: 20px;
+    }
+    header .btn{
+        display: none;
+    }
+    nav ul .btn{
+        display: block;
+        margin: 10px 0;
+    }
+    nav ul{
+        width: 200px;
+        height: 330px;
+        background: #3b82f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 10px;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50% , -50%);
+        top: -1000px;
+        text-align: center;
+    }
+    nav ul a{
+        margin: 10px 0;
+    }
+    #hamburger{
+        display: block;
+        font-size: 20px;
+    }
+    #hamburger:hover{
+        color: #3b82f6;
+    }
+    .login-form{
+        width: 350px;
+    }
+    footer{
+        flex-direction: column;
+    }
+    footer div:nth-child(1){
+        flex-direction: column;
+        margin: 20px 0;
+    }
+    footer div p{
+        margin: 20px 0 10px 0;
+        font-size: 14px;
+    }
+    #volume{
+        display: none;
+    }
+    .controls{
+        margin: 0 auto;
+    }
+    .controls div{
+        width: 40px;
+        height: 40px;
+        margin: 15px;
+    }
+    .image .player input{
+        width: 92%;
+    }
+    #song-player{
+        padding: 30px;
+    }
+}

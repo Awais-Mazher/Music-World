@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicWorld.com</title>
+    <link rel="stylesheet" href="/home.css" />
+  </head>
+  <body>
+
+    <!-- ---------- Header ---------- -->
+
+    <header>
+      <h1><i class="fa-solid fa-headphones"></i> MusicWorld</h1>
+      <nav>
+        <ul id="navbar">
+          <a href="/Home.html"><li>Home</li></a>
+          <a href="#"><li>Latest Updates</li></a>
+          <a href="#"><li>About</li></a>
+          <a href="#"><li>Contact</li></a>
+          <button class="btn" id="login-btn-sm">Login</button>
+        </ul>
+      </nav>
+      <button class="btn" id="login-btn">Login</button>
+      <i class="fa-solid fa-bars" id="hamburger"></i>
+    </header>
+
+    <!-- ---------- Login-Form ---------- -->
+
+    <div class="login-form" id="login-form">
+      <i class="fa-solid fa-xmark" id="cross"></i>
+      <h1>Join for Free</h1>
+      <input type="text" placeholder="Enter your name" required />
+      <input type="text" placeholder="Enter your email" required />
+      <input type="text" placeholder="Enter your password" required />
+      <button type="submit">Login</button>
+    </div>
+
+    <section id="song-player">
+      <div class="image">
+        <div class="player">
+          <input type="range" id="progress"/>
+
+          <div class="control-buttons">
+
+            <div>
+              <div id="volume">
+                <div id="cell-1" onclick="cell1()"></div>
+                <div id="cell-2" onclick="cell2()"></div>
+                <div id="cell-3" onclick="cell3()"></div>
+                <div id="cell-4" onclick="cell4()"></div>
+              </div>
+
+              <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()">
+                  <i class="fa-solid fa-play" id="ctrl-icon"></i>
+                </div>
+                <div><i class="fa-solid fa-forward"></i></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <audio id="song">
+          <source src="Songs/I Am a Rider(PaglaSongs).mp3" type="audio/mpeg"/>
+        </audio>
+
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <h1><i class="fa-solid fa-headphones"></i> MusicWorld</h1>
+        <p>@Copyright MusicWorld | all rights reserved 2010</p>
+      </div>
+
+      <div class="social-links">
+        <button class="social-btn">
+          <i class="fa-brands fa-facebook-f"></i>
+        </button>
+        <button class="social-btn">
+          <i class="fa-brands fa-x-twitter"></i>
+        </button>
+        <button class="social-btn">
+          <i class="fa-brands fa-instagram"></i>
+        </button>
+        <button class="social-btn"><i class="fa-brands fa-discord"></i></button>
+      </div>
+    </footer>
+    
+    <script>
+      let progress = document.getElementById("progress");
+      let song = document.getElementById("song");
+      let ctrlIcon = document.getElementById("ctrl-icon");
+      let cellOne = document.getElementById("cell-1");
+      let cellTwo = document.getElementById("cell-2");
+      let cellThree = document.getElementById("cell-3");
+      let cellFour = document.getElementById("cell-4");
+
+      song.onloadedmetadata = function () {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+      };
+
+      function playPause() {
+        if (ctrlIcon.classList.contains("fa-pause")) {
+          song.pause();
+          ctrlIcon.classList.remove("fa-pause");
+          ctrlIcon.classList.add("fa-play");
+        } else {
+          song.play();
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      }
+
+      if (song.play()) {
+        setInterval(() => {
+          progress.value = song.currentTime;
+        }, 500);
+      }
+
+      progress.onchange = function () {
+        song.play();
+        song.currentTime = progress.value;
+        ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+      };
+
+      function cell1() {
+        cellOne.style.background = "#1033a7";
+        cellTwo.style.background = "#fff";
+        cellThree.style.background = "#fff";
+        cellFour.style.background = "#fff";
+        song.volume = "0.3";
+      }
+
+      function cell2() {
+        cellOne.style.background = "#1033a7";
+        cellTwo.style.background = "#1033a7";
+        cellThree.style.background = "#fff";
+        cellFour.style.background = "#fff";
+        song.volume = "0.5";
+      }
+
+      function cell3() {
+        cellOne.style.background = "#1033a7";
+        cellTwo.style.background = "#1033a7";
+        cellThree.style.background = "#1033a7";
+        cellFour.style.background = "#fff";
+        song.volume = "0.8";
+      }
+
+      function cell4() {
+        cellOne.style.background = "#1033a7";
+        cellTwo.style.background = "#1033a7";
+        cellThree.style.background = "#1033a7";
+        cellFour.style.background = "#1033a7";
+        song.volume = "1";
+      }
+    </script>
+
+    <script>
+      let hamburger = document.getElementById("hamburger");
+      let navbar = document.getElementById("navbar");
+      let loginBtn = document.getElementById("login-btn");
+      let loginForm = document.getElementById("login-form");
+      let loginBtnSm = document.getElementById("login-btn-sm");
+      let cross = document.getElementById("cross");
+
+      hamburger.addEventListener("click", () => {
+        navbar.classList.toggle("nav-top");
+        navbar.style.transition = "all 0.5s";
+      });
+
+      loginBtn.addEventListener("click", () => {
+        loginForm.classList.add("form-top");
+        loginForm.style.transition = "all 0.7s";
+      });
+
+      cross.addEventListener("click", () => {
+        loginForm.classList.remove("form-top");
+        loginForm.style.transition = "all 0.7s";
+      });
+
+      cross.addEventListener("click", () => {
+        loginForm.classList.remove("form-top-sm");
+        loginForm.style.transition = "all 0.7s";
+      });
+
+      loginBtnSm.addEventListener("click", () => {
+        loginForm.classList.add("form-top-sm");
+        loginForm.style.transition = "all 0.7s";
+      });
+    </script>
+
+
+
+    <script src="https://kit.fontawesome.com/9dd113c0da.js" crossorigin="anonymous"></script>
+  </body>
+</html>
